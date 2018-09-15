@@ -1,0 +1,34 @@
+<main class="container">
+    <h1>Burger Eater</h1>
+    <img src="../assets/img/burgerMon.jpeg" style="width: 300px;">
+    <div>
+        <div class="row">
+            <div class="col-6">
+                <h3>Uneaten Burgers</h3>
+                <div class="undevoured">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                    <div id="{{id}}">{{id}}. {{burger_name}}
+                        <button class="devour">Devour</button>
+                    </div>
+                    {{/unless}}
+                {{/each}}
+                </div>
+            </div>
+            <div class="col-6">
+                <h3>Devoured Burgers</h3>
+                {{#each burgers}}
+                    {{#if devoured}}
+                    <div id="{{id}}">{{id}}. {{burger_name}}
+                    </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        <h3>Add a Burger</h3>
+        <form>
+            <input id="burger_name" type="text">
+            <button id="submit">Submit Burger</button>
+        </form>
+    </div>
+</main>
